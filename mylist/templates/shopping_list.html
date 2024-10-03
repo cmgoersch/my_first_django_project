@@ -53,9 +53,21 @@
         <div class="list-item">
             <input type="checkbox"> Element 2
         </div>
-        <button>
+        <button onclick="addItem()">
             +
         </button>
-
+<script>
+    function addItem() {
+        let itemName = prompt('Neues Element hinzufügen');
+        let token = '{{ csrf_token }}';
+        let formData = new FormData();
+        formData.append('itemName', itemName);
+        formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+        fetch('/mylist/', {
+            method: 'POST', 
+            body: formData
+        });
+    }
+</script>
 </body>
 </html>
