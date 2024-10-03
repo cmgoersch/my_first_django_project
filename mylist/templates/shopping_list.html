@@ -47,12 +47,12 @@
         <h1>Einkaufsliste</h1>
     </header>
 
+    {% for row in all_items %}
         <div class="list-item">
-            <input type="checkbox"> Element 1
+            <input type="checkbox"> {{row.name}}
         </div>
-        <div class="list-item">
-            <input type="checkbox"> Element 2
-        </div>
+        {% endfor %}
+        
         <button onclick="addItem()">
             +
         </button>
@@ -67,6 +67,7 @@
             method: 'POST', 
             body: formData
         });
+        window.location.reload();
     }
 </script>
 </body>
