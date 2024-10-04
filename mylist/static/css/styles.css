@@ -23,7 +23,7 @@ header {
 }
 
 .button:hover {
-    background-color: #9B59B6;
+    background-color: purple; 
     color: white;
 }
 .start-title {
@@ -55,7 +55,7 @@ header {
 }
 
 .fab-button:hover {
-    background-color: #9B59B6;
+    background-color: purple; 
     color: white;
 }
 
