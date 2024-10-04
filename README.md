@@ -29,7 +29,7 @@ So sieht das ganze momentan aus:
 
 ---
 
-Gebaut habe ich das größtenteils nach der Anleitung aus diesem Tutorial
+Das Grundgerüst habe ich nach der Anleitung aus diesem Tutorial erstellt und dann erweitert :)
 https://www.youtube.com/watch?v=Tl0RsoMMSic
 
 
