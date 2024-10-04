@@ -1,27 +1,50 @@
 // scripts.js
+
+// Öffnet das Modal
+function openModal() {
+    document.getElementById('itemModal').style.display = 'block';
+}
+
+// Schließt das Modal und sendet das Formular ab
 function addItem() {
-    let itemName = prompt('Neues Element hinzufügen');
-    let token = '{{ csrf_token }}';
+    let itemName = document.getElementById('itemNameInput').value;
+    let token = document.getElementById('csrfTokenInput').value; // Token aus verstecktem Feld
     let formData = new FormData();
     formData.append('itemName', itemName);
-    formData.append('csrfmiddlewaretoken', token);
+    formData.append('csrfmiddlewaretoken', token); // CSRF-Token in Formulardaten
 
     fetch('/mylist/', {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+            'X-CSRFToken': token // CSRF-Token im Header setzen
+        }
     })
     .then(response => {
         if (response.ok) {
-            // Nur neu laden, wenn die Antwort erfolgreich ist
             window.location.reload();
         } else {
-            // Fehlerbehandlung
             alert('Es gab ein Problem beim Hinzufügen des Elements.');
         }
     })
     .catch(error => {
-        // Netzwerkanfrage fehlgeschlagen
         console.error('Fetch-Fehler:', error);
         alert('Ein Fehler ist aufgetreten. Bitte versuche es erneut.');
     });
+
+    // Schließt das Modal nach dem Absenden
+    document.getElementById('itemModal').style.display = 'none';
+}
+
+// Schließt das Modal, wenn man außerhalb des Inhalts klickt
+window.onclick = function(event) {
+    let modal = document.getElementById('itemModal');
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Schließt das Modal ohne Aktion auszuführen
+function closeModal() {
+    document.getElementById('itemModal').style.display = 'none';
 }

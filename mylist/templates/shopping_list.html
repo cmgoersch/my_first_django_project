@@ -4,11 +4,11 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token }}">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <!-- Verweis auf die externe CSS-Datei -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
@@ -22,12 +22,21 @@
         </div>
     {% endfor %}
     
-    <button onclick="addItem()">
-        +
-    </button>
+    <button class="fab-button" onclick="openModal()">+</button>
 
-    <!-- Verweis auf die externe JavaScript-Datei -->
+    <!-- Modal -->
+    <div id="itemModal" class="modal">
+        <div class="modal-content">
+            <h2>Neues Element hinzufügen</h2>
+            <input type="hidden" id="csrfTokenInput" value="{{ csrf_token }}"> <!-- CSRF-Token -->
+            <input type="text" id="itemNameInput" placeholder="Elementname">
+            <div style="margin-top: 20px;">
+                <button onclick="addItem()">Hinzufügen</button>
+                <button onclick="closeModal()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
     <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
-
