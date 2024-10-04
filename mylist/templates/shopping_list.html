@@ -37,7 +37,7 @@
     <div id="itemModal" class="modal">
         <div class="modal-content">
             <h2>Neues Element hinzufügen</h2>
-            <input type="hidden" id="csrfTokenInput" value="{{ csrf_token }}"> <!-- CSRF-Token -->
+            <input type="hidden" id="csrfTokenInput" value="{{ csrf_token }}">
             <input type="text" id="itemNameInput" placeholder="Elementname">
             <div style="margin-top: 20px;">
                 <button onclick="addItem()">Hinzufügen</button>
@@ -54,6 +54,9 @@
             <button onclick="closeConfirmModal()" class="cancel-button">Abbrechen</button>
         </div>
     </div>
+
+    <!-- Zurück-Button -->
+    <button class="back-button" onclick="window.location.href='/'">Zurück zur Homepage</button>
 
     <!-- JavaScript -->
     <script src="{% static 'js/scripts.js' %}"></script>
