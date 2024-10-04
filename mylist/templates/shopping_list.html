@@ -16,16 +16,18 @@
         <h1>Einkaufsliste</h1>
     </header>
     
+    <!-- Liste der Einträge -->
     {% for row in all_items %}
     <div class="list-item">
         <input type="checkbox"> {{ row.name }}
         <button class="delete-button" onclick="deleteItem('{{ row.id }}')">Löschen</button>
     </div>
-{% endfor %}
+    {% endfor %}
     
+    <!-- Hinzufügen-Button -->
     <button class="fab-button" onclick="openModal()">+</button>
 
-    <!-- Modal -->
+    <!-- Modal zum Hinzufügen von Elementen -->
     <div id="itemModal" class="modal">
         <div class="modal-content">
             <h2>Neues Element hinzufügen</h2>
@@ -38,6 +40,16 @@
         </div>
     </div>
 
+    <!-- Bestätigungs-Popup für Löschen -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3>Wirklich löschen?</h3>
+            <button id="confirmDelete" class="confirm-button">Ja, löschen</button>
+            <button onclick="closeConfirmModal()" class="cancel-button">Abbrechen</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
