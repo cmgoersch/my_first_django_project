@@ -1,0 +1,31 @@
+/* styles.css */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+header {
+    background-color: yellowgreen;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+button {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: unset;
+    color: white;
+    background-color: yellowgreen;
+    font-size: 32px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+.list-item {
+    background-color: white;
+    height: 60px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
