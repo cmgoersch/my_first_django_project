@@ -11,8 +11,8 @@ zum Starten brauchst du
 
 Sehen kannst du die Liste dann bei dir lokal auf:
 
-http://127.0.0.1:8000/mylist/
-oder http://localhost:8000/mylist/
+http://127.0.0.1:8000/
+oder http://localhost:8000/
 
 ---
 
