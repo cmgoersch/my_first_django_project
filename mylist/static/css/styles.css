@@ -108,6 +108,11 @@ header {
     cursor: pointer;
     margin-right: 10px;
 }
+
+.modal button:hover {
+    background-color: purple; 
+    }
+
 .modal button:last-child {
     background-color: gray; /* Abbrechen-Button in Grau */
 }
@@ -133,7 +138,13 @@ header {
     border-radius: 4px;
     cursor: pointer;
     margin-right: 10px;
+    transition: opacity 0.3s ease;
 }
+
+.confirm-button:hover {
+    background-color: purple; 
+    }
+
 .cancel-button {
     background-color: gray;
     color: white;
