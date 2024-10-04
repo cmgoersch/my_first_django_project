@@ -72,3 +72,14 @@ header {
 .modal button:last-child {
     background-color: gray; /* Abbrechen-Button in Grau */
 }
+
+.delete-button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    
+}

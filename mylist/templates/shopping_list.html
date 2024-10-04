@@ -17,10 +17,11 @@
     </header>
     
     {% for row in all_items %}
-        <div class="list-item">
-            <input type="checkbox"> {{ row.name }}
-        </div>
-    {% endfor %}
+    <div class="list-item">
+        <input type="checkbox"> {{ row.name }}
+        <button class="delete-button" onclick="deleteItem('{{ row.id }}')">Löschen</button>
+    </div>
+{% endfor %}
     
     <button class="fab-button" onclick="openModal()">+</button>
 

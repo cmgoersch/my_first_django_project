@@ -48,3 +48,25 @@ window.onclick = function(event) {
 function closeModal() {
     document.getElementById('itemModal').style.display = 'none';
 }
+
+function deleteItem(itemId) {
+    let token = document.getElementById('csrfTokenInput').value; // CSRF-Token aus dem versteckten Feld
+    fetch(`/mylist/${itemId}/`, {  // Endpoint anpassen, falls nötig
+        method: 'DELETE',
+        headers: {
+            'X-CSRFToken': token, // CSRF-Token im Header setzen
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.reload(); // Seite aktualisieren, um das gelöschte Element zu entfernen
+        } else {
+            alert('Es gab ein Problem beim Löschen des Elements.');
+        }
+    })
+    .catch(error => {
+        console.error('Fetch-Fehler:', error);
+        alert('Ein Fehler ist aufgetreten. Bitte versuche es erneut.');
+    });
+}

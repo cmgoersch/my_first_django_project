@@ -16,12 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mylist.views import mylist
+from mylist.views import mylist, delete_item  # Importiere spezifisch delete_item
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mylist/', mylist),
-
+    path('mylist/<int:item_id>/', delete_item, name='delete_item'),  # Verwende delete_item direkt
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
