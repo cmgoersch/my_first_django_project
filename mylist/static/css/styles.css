@@ -19,11 +19,11 @@ header {
     background-color: yellowgreen;
     text-decoration: none;
     border-radius: 8px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .button:hover {
-    background-color: darkgreen;
+    background-color: #9B59B6;
     color: white;
 }
 .start-title {
@@ -51,6 +51,12 @@ header {
     position: absolute;
     right: 20px;
     bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.fab-button:hover {
+    background-color: #9B59B6;
+    color: white;
 }
 
 .list-item {
