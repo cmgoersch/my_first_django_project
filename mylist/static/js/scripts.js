@@ -87,3 +87,27 @@ document.getElementById('confirmDelete').onclick = function() {
 function closeConfirmModal() {
     document.getElementById('confirmModal').style.display = 'none';
 }
+
+// Speichert den Zustand der Checkbox (abgehakt oder nicht abgehakt) in der Datenbank
+function toggleCheckbox(itemId) {
+    let token = document.getElementById('csrfTokenInput').value;
+    let checkbox = document.getElementById('checkbox' + itemId);
+    let done = checkbox.checked; // True oder False basierend auf dem aktuellen Zustand
+
+    fetch(`/mylist/${itemId}/toggle/`, {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': token,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 'done': done })
+    })
+    .then(response => {
+        if (!response.ok) {
+            alert('Es gab ein Problem beim Aktualisieren des Status.');
+        }
+    })
+    .catch(error => {
+        console.error('Fetch-Fehler:', error);
+    });
+}

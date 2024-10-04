@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mylist.views import mylist, delete_item  # Importiere spezifisch delete_item
+from mylist.views import mylist, delete_item, toggle_done  # toggle_done hinzufügen
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mylist/', mylist),
-    path('mylist/<int:item_id>/', delete_item, name='delete_item'),  # Verwende delete_item direkt
+    path('mylist/<int:item_id>/', delete_item, name='delete_item'),
+    path('mylist/<int:item_id>/toggle/', toggle_done, name='toggle_done'),  # toggle_done direkt verwenden
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

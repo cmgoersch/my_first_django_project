@@ -13,13 +13,19 @@
 </head>
 <body>
     <header>
-        <h1>Einkaufsliste</h1>
+        <h1>Einkaufsliste 🍕🧀🥕🍅🍆</h1>
     </header>
     
     <!-- Liste der Einträge -->
     {% for row in all_items %}
     <div class="list-item">
-        <input type="checkbox"> {{ row.name }}
+        <!-- Benutzerdefinierte Checkbox -->
+        <input type="checkbox" id="checkbox{{ row.id }}" class="custom-checkbox" 
+               {% if row.done %}checked{% endif %} 
+               onclick="toggleCheckbox('{{ row.id }}')">
+        <label for="checkbox{{ row.id }}" class="checkbox-label">{{ row.name }}</label>
+        
+        <!-- Löschen-Button -->
         <button class="delete-button" onclick="deleteItem('{{ row.id }}')">Löschen</button>
     </div>
     {% endfor %}

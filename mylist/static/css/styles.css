@@ -107,3 +107,68 @@ header {
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* Versteckt die Standard-Checkbox */
+.custom-checkbox {
+    display: none;
+}
+
+/* Stil für das Label der Checkbox */
+.checkbox-label {
+    position: relative;
+    padding-left: 35px; /* Platz für das Pseudo-Element links neben dem Text */
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: auto; /* Schiebt das Label nach links */
+}
+
+/* Das Pseudo-Element, das die benutzerdefinierte Checkbox erstellt */
+.checkbox-label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd; /* Rahmenfarbe der Checkbox */
+    border-radius: 4px; /* Abgerundete Ecken */
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Das Pseudo-Element für den "gecheckten" Zustand */
+.custom-checkbox:checked + .checkbox-label::before {
+    background-color: yellowgreen; /* Hintergrundfarbe, wenn die Checkbox aktiviert ist */
+    border-color: yellowgreen;
+}
+
+/* Checkbox-Haken */
+.checkbox-label::after {
+    content: "";
+    position: absolute;
+    left: 7px; /* Passe diesen Wert an, um horizontal zu zentrieren */
+    top: 2px; /* Passe diesen Wert an, um vertikal zu zentrieren */
+    width: 8px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0; /* Unsichtbar, wenn die Checkbox nicht aktiviert ist */
+    transition: opacity 0.3s ease;
+}
+
+/* Zeigt den Haken an, wenn die Checkbox aktiviert ist */
+.custom-checkbox:checked + .checkbox-label::after {
+    opacity: 1; /* Zeigt den Haken an */
+}
+
+/* Stil für den Löschen-Button */
+.delete-button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px; /* Abstand zwischen Checkbox und Löschen-Button */
+}
