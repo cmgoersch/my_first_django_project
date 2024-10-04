@@ -16,13 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mylist.views import mylist, delete_item, toggle_done  # toggle_done hinzufügen
+from mylist.views import mylist, delete_item, toggle_done, homepage  # Importiere homepage direkt
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', homepage, name='homepage'),  # Verwende homepage direkt
     path('mylist/', mylist),
     path('mylist/<int:item_id>/', delete_item, name='delete_item'),
-    path('mylist/<int:item_id>/toggle/', toggle_done, name='toggle_done'),  # toggle_done direkt verwenden
+    path('mylist/<int:item_id>/toggle/', toggle_done, name='toggle_done'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}  <!-- Statische Dateien laden -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startseite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Willkommen zur Einkaufsliste</h1>
+    </header>
+    <div class="start-container">
+    <h2 class="start-title">🛒</h2>
+    <p>Klicke auf den Button, um zur Einkaufsliste zu gelangen:</p>
+    
+    <!-- Der Button, der als Link fungiert -->
+    <a href="/mylist/" class="button">Zur Einkaufsliste</a>
+</div>
+</body>
+</html>

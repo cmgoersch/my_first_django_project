@@ -4,6 +4,9 @@ from .models import ShoppingItem  # Korrigiert auf ShoppingItem
 from django.views.decorators.csrf import csrf_exempt
 import json
 
+def homepage(request):
+    return render(request, 'homepage.html')
+
 # Create your views here.
 def mylist(request):
     if request.method == 'POST':
