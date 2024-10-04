@@ -30,6 +30,7 @@ So sieht das ganze momentan aus:
 ---
 
 Das Grundgerüst habe ich nach der Anleitung aus diesem Tutorial erstellt und dann erweitert :)
-<a href="https://www.youtube.com/watch?v=Tl0RsoMMSic" target="_blank">Grundgerüst Tutorial auf YouTube</a>
+
+### [Grundgerüst Tutorial auf YouTube](https://www.youtube.com/watch?v=Tl0RsoMMSic)
 
 
